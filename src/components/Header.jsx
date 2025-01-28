@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import toplogo from "../assets/images/toplogo_uik_2x2.png";
+import topLogo from "../assets/images/toplogo_uik_2x2.png";
 import utilLogo from "../assets/images/react_logo.svg";
 import menuClose from "../assets/images/btn_totalclose.png";
 
@@ -10,7 +10,7 @@ export default function Header() {
       <div className="header-inner">
         <h1 className="toplogo">
           <Link className="toplogo-link" to="/">
-            <img src={toplogo} alt="UIK" />
+            <img src={topLogo} alt="UIK" />
             <span className="toplogo-text">Frontend Developer</span>
           </Link>
         </h1>
