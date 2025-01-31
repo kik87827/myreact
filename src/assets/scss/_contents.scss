@@ -399,10 +399,11 @@
 .vertical-cont-item-wrap {
 }
 .vertical-cont-item {
-  margin-bottom: rem(50);
+  margin-bottom: rem(50); display:none;
   &:last-of-type {
     margin-bottom: 0;
   }
+  &.active{display:block;}
 }
 .vertical-cont-title {
   font-size: rem(20);

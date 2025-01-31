@@ -9,7 +9,7 @@ import About from './routes/About';
 import Work from './routes/Work';
 
 
-
+// eslint-disable-next-line
 function App() {
   return (
     <BrowserRouter>

@@ -283,7 +283,7 @@ html:not(.touchmode) {
 
 .middle-menu-list {
   > li {
-    margin-bottom: rem(10);
+    margin-bottom: rem(10); font-size: rem(16);
 
     &:last-of-type {
       margin-bottom: 0;
@@ -292,6 +292,7 @@ html:not(.touchmode) {
 }
 
 .middle-menu {
+  font-size: rem(16);
   &.active {
     font-weight: 700;
     color: #000;

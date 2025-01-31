@@ -175,6 +175,10 @@ textarea {
   position: relative;
 }
 
+.hide {
+  display: none !important;
+}
+
 /* @import '_webfont'; */
 html:not(.touchmode) ::-webkit-scrollbar {
   width: 10px;
@@ -193,6 +197,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 /* header */
 .header-wrap {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -426,6 +431,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 
 .middle-left-item {
+  position: -webkit-sticky;
   position: sticky;
   top: 3.75rem;
   left: 0;
@@ -435,11 +441,15 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .middle-menu-list > li {
   margin-bottom: 0.625rem;
+  font-size: 1rem;
 }
 .middle-menu-list > li:last-of-type {
   margin-bottom: 0;
 }
 
+.middle-menu {
+  font-size: 1rem;
+}
 .middle-menu.active {
   font-weight: 700;
   color: #000;
@@ -880,9 +890,13 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .vertical-cont-item {
   margin-bottom: 3.125rem;
+  display: none;
 }
 .vertical-cont-item:last-of-type {
   margin-bottom: 0;
+}
+.vertical-cont-item.active {
+  display: block;
 }
 
 .vertical-cont-title {
