@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function CodingList() {
-  let [category, setCategory] = useState(['MY23', '청구', '대출', '상품', '고객지원']);
+  let [category, setCategory] = useState(['MY234', '청구', '대출', '상품', '고객지원']);
   let [menuActiveIndex, setMenuActiveIndex] = useState(-1);
 
   const handleTotal = (e) => {
