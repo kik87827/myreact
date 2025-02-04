@@ -1,31 +1,36 @@
 import React, { useState } from "react";
 
 export default function CodingList() {
-  let [category, setCategory] = useState(["MY", "청구", "대출", "상품", "고객지원"]);
+  let [category, setCategory] = useState([
+    "MY2",
+    "청구",
+    "대출",
+    "상품",
+    "고객지원",
+  ]);
   let [menuActiveIndex, setMenuActiveIndex] = useState(-1);
-
 
   const handleTotal = (e) => {
     let etarget = e.currentTarget;
     e.preventDefault();
     etarget.classList.add("active");
     setMenuActiveIndex(-1);
-  }
+  };
 
-  const handleMenu = (e,index) => {
+  const handleMenu = (e, index) => {
     let etarget = e.currentTarget;
     e.preventDefault();
     etarget.classList.add("active");
     setMenuActiveIndex(index);
-  }
+  };
 
   const getClassName = (index) => {
     if (menuActiveIndex === index || menuActiveIndex === -1) {
-      return 'active'
+      return "active";
     } else {
-      return '';
+      return "";
     }
-  }
+  };
 
   return (
     <div className="middle-templete">
@@ -35,22 +40,30 @@ export default function CodingList() {
           <ul className="middle-menu-list">
             {
               <li>
-                <button className={`middle-menu ${menuActiveIndex === -1 ? 'active' : ''}`} onClick={(e) => handleTotal(e)}>
+                <button
+                  className={`middle-menu ${
+                    menuActiveIndex === -1 ? "active" : ""
+                  }`}
+                  onClick={(e) => handleTotal(e)}
+                >
                   전체
                 </button>
               </li>
             }
-            {
-              category.map((item,index) => {
-                return (
-                  <li key={index}>
-                    <button className={`middle-menu ${menuActiveIndex === index ? 'active' : ''}`} onClick={(e) => handleMenu(e, index)}>
-                      { item }
-                    </button>
-                  </li>
-                )
-              })
-            }
+            {category.map((item, index) => {
+              return (
+                <li key={index}>
+                  <button
+                    className={`middle-menu ${
+                      menuActiveIndex === index ? "active" : ""
+                    }`}
+                    onClick={(e) => handleMenu(e, index)}
+                  >
+                    {item}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -69,81 +82,106 @@ export default function CodingList() {
             </div>
           </div>
           <div className="vertical-cont-item-wrap">
-            {
-              category.map((item,index) => {
-                return (
-                  <div className={`vertical-cont-item ${getClassName(index)}`} key={index}>
-                    <p className="vertical-cont-title">{item}</p>
-                    <div className="vertical-cont-content">
-                      <div className="codinglist-tb-wrap">
-                        <table className="codinglist-tb">
-                          <thead>
-                            <tr>
-                              <th className="num">no.</th>
-                              <th className="depth">메뉴명</th>
-                              <th className="screen-id">화면 ID</th>
-                              <th className="worker">담당자</th>
-                              <th className="work">현황</th>
-                              <th className="else">비고</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td className="num">1</td>
-                              <td className="depth">
-                                <a href="#" target="_blank" className="screen-link">
-                                  메뉴명1 &gt; 메뉴명2
-                                </a>
-                              </td>
-                              <td className="screen-id">
-                                <a href="#" target="_blank" className="screen-link">
-                                  MY000000
-                                </a>
-                              </td>
-                              <td className="worker">홍길동</td>
-                              <td className="work">대기중</td>
-                              <td className="else">비고란입니다.</td>
-                            </tr>
-                            <tr>
-                              <td className="num">2</td>
-                              <td className="depth">
-                                <a href="#" target="_blank" className="screen-link">
-                                  메뉴명1 &gt; 메뉴명2
-                                </a>
-                              </td>
-                              <td className="screen-id">
-                                <a href="#" target="_blank" className="screen-link">
-                                  MY000001
-                                </a>
-                              </td>
-                              <td className="worker">홍길동</td>
-                              <td className="work">대기중</td>
-                              <td className="else"></td>
-                            </tr>
-                            <tr>
-                              <td className="num">3</td>
-                              <td className="depth">
-                                <a href="#" target="_blank" className="screen-link">
-                                  메뉴명1 &gt; 메뉴명2
-                                </a>
-                              </td>
-                              <td className="screen-id">
-                                <a href="#" target="_blank" className="screen-link">
-                                  MY000002
-                                </a>
-                              </td>
-                              <td className="worker">홍길동</td>
-                              <td className="work end">완료</td>
-                              <td className="else"></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+            {category.map((item, index) => {
+              return (
+                <div
+                  className={`vertical-cont-item ${getClassName(index)}`}
+                  key={index}
+                >
+                  <p className="vertical-cont-title">{item}</p>
+                  <div className="vertical-cont-content">
+                    <div className="codinglist-tb-wrap">
+                      <table className="codinglist-tb">
+                        <thead>
+                          <tr>
+                            <th className="num">no.</th>
+                            <th className="depth">메뉴명</th>
+                            <th className="screen-id">화면 ID</th>
+                            <th className="worker">담당자</th>
+                            <th className="work">현황</th>
+                            <th className="else">비고</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="num">1</td>
+                            <td className="depth">
+                              <a
+                                href="#"
+                                target="_blank"
+                                className="screen-link"
+                              >
+                                메뉴명1 &gt; 메뉴명2
+                              </a>
+                            </td>
+                            <td className="screen-id">
+                              <a
+                                href="#"
+                                target="_blank"
+                                className="screen-link"
+                              >
+                                MY000000
+                              </a>
+                            </td>
+                            <td className="worker">홍길동</td>
+                            <td className="work">대기중</td>
+                            <td className="else">비고란입니다.</td>
+                          </tr>
+                          <tr>
+                            <td className="num">2</td>
+                            <td className="depth">
+                              <a
+                                href="#"
+                                target="_blank"
+                                className="screen-link"
+                              >
+                                메뉴명1 &gt; 메뉴명2
+                              </a>
+                            </td>
+                            <td className="screen-id">
+                              <a
+                                href="#"
+                                target="_blank"
+                                className="screen-link"
+                              >
+                                MY000001
+                              </a>
+                            </td>
+                            <td className="worker">홍길동</td>
+                            <td className="work">대기중</td>
+                            <td className="else"></td>
+                          </tr>
+                          <tr>
+                            <td className="num">3</td>
+                            <td className="depth">
+                              <a
+                                href="#"
+                                target="_blank"
+                                className="screen-link"
+                              >
+                                메뉴명1 &gt; 메뉴명2
+                              </a>
+                            </td>
+                            <td className="screen-id">
+                              <a
+                                href="#"
+                                target="_blank"
+                                className="screen-link"
+                              >
+                                MY000002
+                              </a>
+                            </td>
+                            <td className="worker">홍길동</td>
+                            <td className="work end">완료</td>
+                            <td className="else"></td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                )
-              })
-            }
+                </div>
+              );
+            })}
             {/* <div className="vertical-cont-item">
               <p className="vertical-cont-title">MY</p>
               <div className="vertical-cont-content">
