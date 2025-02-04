@@ -1,34 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function CodingList() {
-  let [category, setCategory] = useState([
-    "MY2",
-    "청구",
-    "대출",
-    "상품",
-    "고객지원",
-  ]);
+  let [category, setCategory] = useState(['MY23', '청구', '대출', '상품', '고객지원']);
   let [menuActiveIndex, setMenuActiveIndex] = useState(-1);
 
   const handleTotal = (e) => {
     let etarget = e.currentTarget;
     e.preventDefault();
-    etarget.classList.add("active");
+    etarget.classList.add('active');
     setMenuActiveIndex(-1);
   };
 
   const handleMenu = (e, index) => {
     let etarget = e.currentTarget;
     e.preventDefault();
-    etarget.classList.add("active");
+    etarget.classList.add('active');
     setMenuActiveIndex(index);
   };
 
   const getClassName = (index) => {
     if (menuActiveIndex === index || menuActiveIndex === -1) {
-      return "active";
+      return 'active';
     } else {
-      return "";
+      return '';
     }
   };
 
@@ -41,9 +35,7 @@ export default function CodingList() {
             {
               <li>
                 <button
-                  className={`middle-menu ${
-                    menuActiveIndex === -1 ? "active" : ""
-                  }`}
+                  className={`middle-menu ${menuActiveIndex === -1 ? 'active' : ''}`}
                   onClick={(e) => handleTotal(e)}
                 >
                   전체
@@ -54,9 +46,7 @@ export default function CodingList() {
               return (
                 <li key={index}>
                   <button
-                    className={`middle-menu ${
-                      menuActiveIndex === index ? "active" : ""
-                    }`}
+                    className={`middle-menu ${menuActiveIndex === index ? 'active' : ''}`}
                     onClick={(e) => handleMenu(e, index)}
                   >
                     {item}
@@ -73,8 +63,8 @@ export default function CodingList() {
             <h3 className="middle-right-title">퍼블리싱 리스트</h3>
             <div className="middle-right-title-count-wrap">
               <p className="middle-right-title-count">
-                End page : <span className="current-count">5</span>page / Total
-                page : <span className="total-count">15</span>page
+                End page : <span className="current-count">5</span>page / Total page :{' '}
+                <span className="total-count">15</span>page
               </p>
               <p className="middle-right-title-count">
                 진행율 : <span className="current-count-per">33</span>%
@@ -84,10 +74,7 @@ export default function CodingList() {
           <div className="vertical-cont-item-wrap">
             {category.map((item, index) => {
               return (
-                <div
-                  className={`vertical-cont-item ${getClassName(index)}`}
-                  key={index}
-                >
+                <div className={`vertical-cont-item ${getClassName(index)}`} key={index}>
                   <p className="vertical-cont-title">{item}</p>
                   <div className="vertical-cont-content">
                     <div className="codinglist-tb-wrap">
@@ -106,20 +93,12 @@ export default function CodingList() {
                           <tr>
                             <td className="num">1</td>
                             <td className="depth">
-                              <a
-                                href="#"
-                                target="_blank"
-                                className="screen-link"
-                              >
+                              <a href="#" target="_blank" className="screen-link">
                                 메뉴명1 &gt; 메뉴명2
                               </a>
                             </td>
                             <td className="screen-id">
-                              <a
-                                href="#"
-                                target="_blank"
-                                className="screen-link"
-                              >
+                              <a href="#" target="_blank" className="screen-link">
                                 MY000000
                               </a>
                             </td>
@@ -130,20 +109,12 @@ export default function CodingList() {
                           <tr>
                             <td className="num">2</td>
                             <td className="depth">
-                              <a
-                                href="#"
-                                target="_blank"
-                                className="screen-link"
-                              >
+                              <a href="#" target="_blank" className="screen-link">
                                 메뉴명1 &gt; 메뉴명2
                               </a>
                             </td>
                             <td className="screen-id">
-                              <a
-                                href="#"
-                                target="_blank"
-                                className="screen-link"
-                              >
+                              <a href="#" target="_blank" className="screen-link">
                                 MY000001
                               </a>
                             </td>
@@ -154,20 +125,12 @@ export default function CodingList() {
                           <tr>
                             <td className="num">3</td>
                             <td className="depth">
-                              <a
-                                href="#"
-                                target="_blank"
-                                className="screen-link"
-                              >
+                              <a href="#" target="_blank" className="screen-link">
                                 메뉴명1 &gt; 메뉴명2
                               </a>
                             </td>
                             <td className="screen-id">
-                              <a
-                                href="#"
-                                target="_blank"
-                                className="screen-link"
-                              >
+                              <a href="#" target="_blank" className="screen-link">
                                 MY000002
                               </a>
                             </td>
